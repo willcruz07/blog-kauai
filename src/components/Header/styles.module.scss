@@ -1,0 +1,99 @@
+@keyframes rotateMenu {
+  0% {
+    transform: rotateX(-90deg);
+  }
+  70% {
+    transform: rotateX(20deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+@keyframes closeMenu {
+  0% {
+    transform: rotateX(0deg);
+  }
+  70% {
+    transform: rotateX(20deg);
+  }
+  100% {
+    transform: rotateX(-90deg);
+  }
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: center;
+  background: var(--black);
+  height: 5rem;
+  border-bottom: 1px solid var(--gray);
+}
+
+.headerContent {
+  width: 100%;
+  max-width: 1120px;
+
+  height: 5rem;
+  padding: 0 2rem;
+
+  display: flex;
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.headerNav {
+  @media (max-width: 800px) {
+    display: none;
+  }
+}
+
+.headerMenu {
+  @media (min-width: 800px) {
+    display: none;
+  }
+
+  button {
+    background: var(--black-2);
+    border-radius: 50%;
+    padding: 1rem;
+    border: none;
+
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: brightness(0.8);
+    }
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+
+    color: var(--white-2);
+  }
+}
+
+.dropdownMenu {
+  transform-origin: top center;
+
+  position: absolute;
+  right: 0;
+  height: 11.5rem;
+  margin-right: 3rem;
+  background-color: var(--black-2);
+  border-radius: 1rem;
+  border: 1px solid var(--primary);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding: 1rem;
+}
+
+.animationMenuOpen {
+  animation: rotateMenu 400ms ease-in-out forwards;
+}
+
+.animationMenuClose {
+  animation: closeMenu 400ms ease-in forwards;
+}
